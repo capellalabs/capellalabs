@@ -1,26 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-
 };
 
-const repo = "capellalabs";
-const isGithubActions = process.env.GITHUB_ACTIONS || false
+const isGithubActions = process.env.GITHUB_ACTIONS || false;
 
-let assetPrefix = ''
-let basePath = '/'
+let assetPrefix = "";
+let basePath = "/";
 
 if (isGithubActions) {
-  const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
+  const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, "");
 
-  assetPrefix = `/${repo}/`
-  basePath = `/${repo}`
+  assetPrefix = `/${repo}/`;
+  basePath = `/${repo}`;
 }
 
 module.exports = {
   assetPrefix: assetPrefix,
   basePath: basePath,
   nextConfig,
-}
-
-
+  images: {
+    loader: "imgix",
+    path: "capellalabs.imgix.net",
+  },
+};
