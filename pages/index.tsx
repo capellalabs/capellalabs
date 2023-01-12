@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import { animated, useSpring } from "@react-spring/web";
 
@@ -26,8 +27,8 @@ export default function Home() {
       }}
     >
       <Image
-        height={280}
-        width={280}
+        height={300}
+        width={300}
         icon={"logo"}
         themeMode={themeMode}
         alt="Capella Logo"
